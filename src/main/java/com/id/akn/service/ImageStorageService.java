@@ -10,10 +10,7 @@ public interface ImageStorageService {
     Set<String> saveFiles(Integer productId, Set<MultipartFile> files) throws IOException;
 
     void deleteFiles(Integer laptopId, Set<String> imageUrls) throws IOException;
-
-    void deleteLaptopDirectory(Integer laptopId) throws IOException;
-
-    List<String> getHomeSlideImages() throws IOException;
+ages() throws IOException;
 
     Boolean deleteHomeSlideImage(String url) throws IOException;
 
