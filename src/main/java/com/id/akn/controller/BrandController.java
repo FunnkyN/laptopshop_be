@@ -21,7 +21,7 @@ public class BrandController {
     public ResponseEntity<List<Brand>> getAllBrands() {
         return ResponseEntity.ok(brandService.getAllBrands());
     }
-
+git commit -m "thêm chat icon"
     @GetMapping("/{id}")
     public ResponseEntity<Brand> getBrandById(@PathVariable Byte id) throws BrandException {
         return ResponseEntity.ok(brandService.getBrandById(id));

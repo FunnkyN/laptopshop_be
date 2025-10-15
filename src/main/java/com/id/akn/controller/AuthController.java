@@ -25,8 +25,10 @@ import com.id.akn.model.User;
 import com.id.akn.request.Login;
 import com.id.akn.response.AuthRes;
 import com.id.akn.service.CartService;
+import com.id.akn.service.GeminiService;
 
 import lombok.AllArgsConstructor;
+import vn.payos.PayOS;
 
 @RestController
 @RequestMapping("/auth")
@@ -61,7 +63,10 @@ public class AuthController {
 		}
 		return new ResponseEntity<>(authRes, HttpStatus.CREATED);
 	}
-
+    public ApiClientController(GeminiService geminiService, PayOS payOS) {
+        this.geminiService = geminiService;
+        this.payOS = payOS;
+    }
 	@PostMapping("/login")
 	public ResponseEntity<?> loginUserHandler(@RequestBody Login login){
 
