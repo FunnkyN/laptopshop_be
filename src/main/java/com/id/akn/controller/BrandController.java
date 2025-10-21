@@ -27,10 +27,6 @@ git commit -m "thêm chat icon"
         return ResponseEntity.ok(brandService.getBrandById(id));
     }
 
-    @PostMapping("/api/admin")
-    public ResponseEntity<Brand> createBrand(@RequestBody Brand brand) throws BrandException {
-        return ResponseEntity.status(HttpStatus.CREATED).body(brandService.createBrand(brand));
-    }
 
     @PutMapping("/api/admin/{id}")
     public ResponseEntity<Brand> updateBrand(@PathVariable Byte id, @RequestBody Brand brand) throws BrandException {
