@@ -15,9 +15,6 @@ import java.util.Optional;
 @Repository
 public interface LaptopColorRepository extends JpaRepository<LaptopColor, Integer> {
 
-    @Query(value = "SELECT * FROM laptop_colors WHERE laptop_id = :laptopId LIMIT 1", nativeQuery = true)
-    LaptopColor findByLaptopId(@Param("laptopId") Integer laptopId);
-
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     Optional<LaptopColor> findByLaptopAndColor(Laptop laptop, Color color);
 }
