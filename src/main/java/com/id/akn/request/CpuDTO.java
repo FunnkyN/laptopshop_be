@@ -14,8 +14,16 @@ public class CpuDTO {
     private String technologyName;
     @NotNull
     private String model;
-    private Float speed;
-    private Float maxSpeed;
+     private Short id;
+    private Byte brandId;
+    private String brandName;
+    private Short technologyId;
+    private String technologyName;
+     private Short id;
+    private Byte brandId;
+    private String brandName;
+    private Short technologyId;
+
     private Byte core;
     private Byte thread;
     private Float cache;
