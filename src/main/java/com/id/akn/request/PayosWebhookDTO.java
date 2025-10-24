@@ -11,6 +11,4 @@ public class PayosWebhookDTO {
     private String code;
     private String desc;
     private boolean success;
-    private PayosWebhookDataDTO data;
-    private String signature;
-}
+    private 
