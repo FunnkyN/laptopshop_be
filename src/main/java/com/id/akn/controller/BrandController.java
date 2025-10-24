@@ -29,9 +29,6 @@ git commit -m "thêm chat icon"
 
 
     @PutMapping("/api/admin/{id}")
-    public ResponseEntity<Brand> updateBrand(@PathVariable Byte id, @RequestBody Brand brand) throws BrandException {
-        return ResponseEntity.ok(brandService.updateBrand(id, brand));
-    }
 
     @DeleteMapping("/api/admin/{id}")
     public ResponseEntity<Void> deleteBrand(@PathVariable Byte id) {
