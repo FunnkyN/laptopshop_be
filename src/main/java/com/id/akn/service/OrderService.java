@@ -13,9 +13,7 @@ public interface OrderService {
 	Order findOrderById(Long orderId) throws OrderException;
 	Page<Order> userOrdersHistory(Long userId, Order.OrderStatus paymentStatus, int page, int size);
 	Order confirmedOrder(Long orderId) throws OrderException;
-	Order shippedOrder(Long orderId) throws OrderException;
-	Order deliveredOrder(Long orderId) throws OrderException;
-	Order canceledOrder(Long orderId) throws OrderException;
+	Order shirId) throws OrderException;
 	List<Order> getAllOrders();
 	void deleteOrder(Long orderId) throws OrderException;
 	void updatePaymentStatus(Long txnRef, Order.PaymentStatus status) throws OrderException;
