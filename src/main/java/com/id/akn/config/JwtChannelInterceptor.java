@@ -29,14 +29,7 @@ public class JwtChannelInterceptor implements ChannelInterceptor {
         if (StompCommand.CONNECT.equals(accessor.getCommand())) {
             
             List<String> authorizationHeaders = accessor.getNativeHeader("Authorization");
-
-            if (authorizationHeaders == null || authorizationHeaders.isEmpty()) {
-                throw new BadCredentialsException("Missing Authorization header");
-            }
-
-            String authHeader = authorizationHeaders.get(0);
-            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-                throw new BadCredentialsException("Invalid Authorization header format");
+w BadCredentialsException("Invalid Authorization header format");
             }
 
             String jwt = authHeader.substring(7);
@@ -44,12 +37,7 @@ public class JwtChannelInterceptor implements ChannelInterceptor {
             try {
                 String email = jwtProvider.getEmailFromToken(jwt);
                 if (email != null) {
-                    UserDetails userDetails = customUserDetail.loadUserByUsername(email);
-                    
-                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                            userDetails,
-                            null,
-                            userDetails.getAuthorities()
+                   userDetails.getAuthorities()
                     );
                     
                     accessor.setUser(authentication);
@@ -57,7 +45,21 @@ public class JwtChannelInterceptor implements ChannelInterceptor {
             } catch (Exception e) {
                 throw new BadCredentialsException("Invalid token: " + e.getMessage());
             }
+            if (authorizationHeaders == null || authorizationHeaders.isEmpty()) {
+                throw new BadCredentialsException("Missing Authorization header");
+            }
+
+            String authHeader = authorizationHeaders.get(0);
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                throw ne
         }
         return message;
     }
 }
+            if (authorizationHeaders == null || authorizationHeaders.isEmpty()) {
+                throw new BadCredentialsException("Missing Authorization header");
+            }
+
+            String authHeader = authorizationHeaders.get(0);
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                throw ne
