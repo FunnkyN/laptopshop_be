@@ -14,3 +14,12 @@ public class PaymentLinkRes {
     private String paymentLinkUrl;
     private String paymentLinkId;
 }
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+
+public class PaymentLinkRes {
+    private String paymentLinkUrl;
+    private String paymentLinkId;
+}

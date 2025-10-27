@@ -14,4 +14,20 @@ public interface GpuService {
     GpuDTO updateGpu(Short id, GpuDTO gpuDTO) throws GpuException;
     void deleteGpu(Short id) throws GpuException;
     GpuDTO convertToDTO(Gpu gpu);
+        List<GpuDTO> getAllGpus();
+    GpuDTO getGpuDTOById(Short id) throws GpuException;
+    Gpu getGpuById(Short id) throws GpuException;
+    GpuDTO createGpu(GpuDTO gpuDTO) throws GpuException;
+    GpuDTO updateGpu(Short id, GpuDTO gpuDTO) throws GpuException;
+    void deleteGpu(Short id) throws GpuException;
+    GpuDTO convertToDTO(Gpu gp
+            List<GpuDTO> getAllGpus();
+
+            List<GpuDTO> getAllGpus();
+    GpuDTO getGpuDTOById(Short id) throws GpuException;
+    Gpu getGpuById(Short id) throws GpuException;
+    GpuDTO createGpu(GpuDTO gpuDTO) throws GpuException;
+    GpuDTO updateGpu(Short id, GpuDTO gpuDTO) throws GpuException;
+    void deleteGpu(Short id) throws GpuException;
+    GpuDTO convertToDTO(Gpu gp
 }
