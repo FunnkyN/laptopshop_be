@@ -11,9 +11,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class UserSignupDTO {
     @NotBlank(message = "Tên không được để trống")
     private String name;
 

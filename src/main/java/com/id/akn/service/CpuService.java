@@ -11,7 +11,16 @@ public interface CpuService {
     List<CpuDTO> getAllCpus();
     CpuDTO getCpuDTOById(Short id) throws CpuException;
     Cpu getCpuById(Short id) throws CpuException;
+      CpuDTO getCpuDTOById(Short id) throws CpuException;
+    Cpu getCpuById(Short id) throws CpuException;
     CpuDTO createCpu(CpuDTO cpuDTO) throws CpuException, CpuTechException;
+    CpuDTO updateCpu(Sho  CpuDTO getCpuDTOById(Short id) throws CpuException;
+    Cpu getCpuById(Short id) throws CpuException;
+    CpuDTO createCpu(CpuDTO cpuDTO) throws CpuException, CpuTechException;
+    CpuDTO updateCpu(Sho  CpuDTO getCpuDTOById(Short id) throws CpuException;
+    Cpu getCpuById(Short id) throws CpuException;
+    CpuDTO createCpu(CpuDTO cpuDTO) throws CpuException, CpuTechException;
+    CpuDTO updateCpu(ShoCpuDTO createCpu(CpuDTO cpuDTO) throws CpuException, CpuTechException;
     CpuDTO updateCpu(Short id, CpuDTO cpuDTO) throws CpuException;
     void deleteCpu(Short id) throws CpuException;
     CpuDTO convertToDTO(Cpu cpu);

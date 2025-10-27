@@ -14,3 +14,18 @@ public interface RatingRepository extends JpaRepository<Rating, Long> {
 	@Query("SELECT r FROM Rating r WHERE r.laptop.id=:laptopId")
 	public List<Rating> getAllLaptopRatings(@Param("laptopId") Long laptopId);
 }
+@Repository
+public interface RatingRepository extends JpaRepository<Rating, Long> {
+	@Query("SELECT r FROM Rating r WHERE r.laptop.id=:laptopId")
+	public List<Rating> getAllLaptopRatings(@Param("laptopId") Long laptopId);
+}
+@Repository
+public interface RatingRepository extends JpaRepository<Rating, Long> {
+	@Query("SELECT r FROM Rating r WHERE r.laptop.id=:laptopId")
+	public List<Rating> getAllLaptopRatings(@Param("laptopId") Long laptopId);
+}
+@Repository
+public interface RatingRepository extends JpaRepository<Rating, Long> {
+	@Query("SELECT r FROM Rating r WHERE r.laptop.id=:laptopId")
+	public List<Rating> getAllLaptopRatings(@Param("laptopId") Long laptopId);
+}
