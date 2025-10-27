@@ -39,14 +39,7 @@ public class AuthController {
 	private CartService cartService;
 	private CaptchaService captchaService; // Inject CaptchaService
 
-	@PostMapping("/signup")
-	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
-		
-        // Bước 1: Verify Captcha
-		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
-		if (!isCaptchaValid) {
-			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
-		}
+	
 
         // Bước 2: Logic tạo User
 		User savedUser = userService.createUser(userSignupDTO);
@@ -58,7 +51,14 @@ public class AuthController {
 		AuthRes authRes = new AuthRes();
 		authRes.setJwt(token);
 		authRes.setMessage("Đăng ký thành công");
-
+@PostMapping("/signup")
+	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
+		
+        // Bước 1: Verify Captcha
+		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
+		if (!isCaptchaValid) {
+			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
+		}
 		return new ResponseEntity<>(authRes, HttpStatus.CREATED);
 	}
 
@@ -67,6 +67,13 @@ public class AuthController {
 
         // Bước 1: Verify Captcha
 		boolean isCaptchaValid = captchaService.verify(login.getRecaptchaToken());
+		if (!isCaptchaValid) {
+			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
+		}@PostMapping("/signup")
+	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
+		
+        // Bước 1: Verify Captcha
+		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
 		if (!isCaptchaValid) {
 			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
 		}
@@ -81,16 +88,18 @@ public class AuthController {
 		authRes.setMessage("Đăng nhập thành công");
 		return new ResponseEntity<>(authRes, HttpStatus.CREATED);
 
-	}
+	}@PostMapping("/signup")
+	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
+		
+        // Bước 1: Verify Captcha
+		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
+		if (!isCaptchaValid) {
+			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
+		}
 
 	private Authentication authenticate(String username, String password) {
 		UserDetails userDetails = customUserDetail.loadUserByUsername(username);
 		if(userDetails==null) {
-			throw new BadCredentialsException("Tên đăng nhập không hợp lệ");
-		}
-		if(!passwordEncoder.matches(password, userDetails.getPassword())) {
-			throw new BadCredentialsException("Mật khẩu không hợp lệ");
-		}
-		return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+			ePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 	}
 }
