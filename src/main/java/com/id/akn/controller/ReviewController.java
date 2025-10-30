@@ -51,10 +51,6 @@ public class ReviewController {
 		}
 	}
 
-	@GetMapping("/laptop/{laptopId}")
-	public ResponseEntity<List<com.id.akn.model.Review>> getLaptopReviewsHandler(@PathVariable Long laptopId){
-		List<com.id.akn.model.Review>reviews=reviewService.getLaptopReviews(laptopId);
-		return new ResponseEntity<List<com.id.akn.model.Review>>(reviews,HttpStatus.OK);
-	}
+	
 
 }
