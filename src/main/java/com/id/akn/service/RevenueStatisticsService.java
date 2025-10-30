@@ -10,6 +10,5 @@ import java.util.List;
 public interface RevenueStatisticsService {
     List<YearlyRevenueRes> calculateTotalRevenuePerYear();
     YearlyRevenueDTO calculateYearlyRevenueWithMonthlyData(int year);
-    List<ProductRevenuePercentageDTO> calculateProductRevenuePercentages();
-    BudgetRes getBudgetRes();
+
 }
