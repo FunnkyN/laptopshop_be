@@ -31,12 +31,7 @@ public class CategoryController {
     @PostMapping("/api/admin")
     public ResponseEntity<CategoryDTO> createCategory(@RequestBody CategoryDTO categoryDTO) throws CategoryException {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.createCategory(categoryDTO));
-    }
-
-    @PutMapping("/api/admin/{id}")
-    public ResponseEntity<CategoryDTO> updateCategory(@PathVariable Byte id, @RequestBody CategoryDTO categoryDTO) throws CategoryException {
-        return ResponseEntity.ok(categoryService.updateCategory(id, categoryDTO));
-    }
+  
 
     @DeleteMapping("/api/admin/{id}")
     public ResponseEntity<Void> deleteCategory(@PathVariable Byte id) throws CategoryException {
