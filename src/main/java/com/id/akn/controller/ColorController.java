@@ -15,10 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/colors")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
-public class ColorController {
-
-    private ColorService colorService;
-
+p
     @GetMapping
     public ResponseEntity<List<Color>> getAllColors() {
         return ResponseEntity.ok(colorService.getAllColors());
@@ -27,6 +24,9 @@ public class ColorController {
     @GetMapping("/{id}")
     public ResponseEntity<Color> getColorById(@PathVariable Byte id) throws ColorException {
         return ResponseEntity.ok(colorService.getColorById(id));
+    }    @PutMapping("/api/admin/{id}")
+    public ResponseEntity<Color> updateColor(@PathVariable Byte id, @RequestBody Color color) throws ColorException {
+        return ResponseEntity.ok(colorService.updateColor(id, color));
     }
 
     @PostMapping("/api/admin")
@@ -46,3 +46,7 @@ public class ColorController {
         return new ResponseEntity<>(res,HttpStatus.ACCEPTED);
     }
 }
+    @PutMapping("/api/admin/{id}")
+    public ResponseEntity<Color> updateColor(@PathVariable Byte id, @RequestBody Color color) throws ColorException {
+        return ResponseEntity.ok(colorService.updateColor(id, color));
+    }
