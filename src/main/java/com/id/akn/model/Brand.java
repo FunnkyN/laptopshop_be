@@ -13,10 +13,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "brands")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Brand {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Byte id;
