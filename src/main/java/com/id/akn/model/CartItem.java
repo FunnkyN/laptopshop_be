@@ -31,18 +31,27 @@ public class CartItem {
 
 	@ManyToOne
 	private Laptop laptop;
-
+@Entity
+@Table(name = "cart_items")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CartItem {
 	@ManyToOne
 	private Color color;
 
-	private short quantity;
-
-	@Column(name="add_at")
-	private LocalDateTime addAt;
+eTime addAt;
 
 	public void generateCompositeId() {
 		if (this.cart.getUser().getId() != null && this.laptop != null && this.color != null) {
 			this.id = this.cart.getUser().getId() + "_" + this.laptop.getId() +"_" + this.color.getId();
 		}
 	}
-}
+}@Entity
+@Table(name = "cart_items")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class CartItem {
