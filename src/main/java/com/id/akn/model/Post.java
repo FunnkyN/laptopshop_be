@@ -22,9 +22,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "posts")
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+uctor
 @Builder
 public class Post {
     @Id
@@ -40,18 +38,27 @@ public class Post {
     private String thumbnail;
 
     @Column(name = "short_description", length = 500)
-    private String shortDescription;
+    private SId
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition =tring shortDescription;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnore
     private User user;
+Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition =
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-}
-
-//  Thay đổi nội dung để cập nhật git history
