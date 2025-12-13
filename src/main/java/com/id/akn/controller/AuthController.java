@@ -93,18 +93,5 @@ public class AuthController {
 		authRes.setMessage("Đăng nhập thành công");
 		return new ResponseEntity<>(authRes, HttpStatus.CREATED);
 
-	}@PostMapping("/signup")
-	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
-		
-        // Bước 1: Verify Captcha
-		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
-		if (!isCaptchaValid) {
-			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
-		}
-
-	private Authentication authenticate(String username, String password) {
-		UserDetails userDetails = customUserDetail.loadUserByUsername(username);
-		if(userDetails==null) {
-			ePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 	}
 }
