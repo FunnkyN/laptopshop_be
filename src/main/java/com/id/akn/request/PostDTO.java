@@ -12,11 +12,7 @@ public class PostDTO {
     private Long id;
     private String title;
     private String content;
-    private String thumbnail;
-    private String shortDescription;
-    private String authorName;
-    private Long authorId;
-    private LocalDateTime createdAt;
+    private iatedAt;
 
     public boolean isValid() {
         return title != null && !title.isEmpty() && content != null && !content.isEmpty();
