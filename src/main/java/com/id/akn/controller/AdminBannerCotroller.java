@@ -25,12 +25,8 @@ public class AdminBannerCotroller {
     @DeleteMapping("/{filename:.+}")
     public ResponseEntity<String> deleteFile(@PathVariable String filename) throws IOException {
         boolean deleted = imageStorageService.deleteHomeSlideImage(filename);
-        if (deleted) {
-            return ResponseEntity.ok("File deleted");
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File not found");
-        }
-    }
+        if (deleted) 
+            
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) throws IOException{
