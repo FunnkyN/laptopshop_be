@@ -21,13 +21,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AdminBannerCotroller {
     private ImageStorageService imageStorageService;
-
-    @DeleteMapping("/{filename:.+}")
-    public ResponseEntity<String> deleteFile(@PathVariable String filename) throws IOException {
-        boolean deleted = imageStorageService.deleteHomeSlideImage(filename);
-        if (deleted) 
-            
-
     @PostMapping("/upload")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) throws IOException{
         String filename = imageStorageService.saveHomeSlideImage(file);
