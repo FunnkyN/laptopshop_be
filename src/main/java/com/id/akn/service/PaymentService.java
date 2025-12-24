@@ -9,4 +9,8 @@ import java.util.Map;
 public interface PaymentService {
     PaymentLinkRes createPaymentLink(Long amount, String bankCode, String ipAddress, String vnp_TxnRef) throws OrderException ,IOException;
     String handleVnpayIpn(Map<String, String> params) throws OrderException;
+} PaymentLinkRes createPaymentLink(Long amount, String bankCode, String ipAddress, String vnp_TxnRef) throws OrderException ,IOException;
+    String handleVnpayIpn(Map<String, String> params) throws OrderException;
+} PaymentLinkRes createPaymentLink(Long amount, String bankCode, String ipAddress, String vnp_TxnRef) throws OrderException ,IOException;
+    String handleVnpayIpn(Map<String, String> params) throws OrderException;
 }
