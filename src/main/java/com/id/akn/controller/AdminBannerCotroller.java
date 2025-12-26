@@ -21,9 +21,4 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AdminBannerCotroller {
     private ImageStorageService imageStorageService;
-    @PostMapping("/upload")
-    public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) throws IOException{
-        String filename = imageStorageService.saveHomeSlideImage(file);
-        return new ResponseEntity<>(filename, HttpStatus.OK);
-    }
 }
