@@ -74,16 +74,7 @@ public class AuthController {
 		boolean isCaptchaValid = captchaService.verify(login.getRecaptchaToken());
 		if (!isCaptchaValid) {
 			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
-		}@PostMapping("/signup")
-	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
-		
-        // Bước 1: Verify Captcha
-		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
-		if (!isCaptchaValid) {
-			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
 		}
-
-        // Bước 2: Logic Đăng nhập
 		Authentication authentication = authenticate(login.getEmail(), login.getPassword());
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String token = jwtProvider.generateToken(authentication);
