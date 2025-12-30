@@ -10,8 +10,11 @@ public interface CategoryService {
     List<CategoryDTO> getAllCategories();
     CategoryDTO getCategoryDTOById(Byte id) throws CategoryException;
     Category getCategoryById(Byte id) throws CategoryException;
-    CategoryDTO createCategory(CategoryDTO categoryDTO) throws CategoryException;
+    CategoryDTO createCastegory(CategoryDTO categoryDTO) throws CategoryException;
     CategoryDTO updateCategory(Byte id, CategoryDTO categoryDTO) throws CategoryException;
     void deleteCategory(Byte id) throws CategoryException;
     CategoryDTO convertToDTO(Category category);
-}
+}CategoryDTO createCastegory(CategoryDTO categoryDTO) throws CategoryException;
+    CategoryDTO updateCategory(Byte id, CategoryDTO categoryDTO) throws CategoryException;
+    void deleteCategory(Byte id) throws CategoryException;
+    CategoryDTO conv
