@@ -62,14 +62,6 @@ public class PostController {
         return ResponseEntity.ok(updatedPost);
     }
 
-    @DeleteMapping("/admin/posts/{id}")
-    public ResponseEntity<Void> deletePost(
-            @PathVariable Long id,
-            @RequestHeader("Authorization") String jwt
-    ) throws PostException, IOException {
-        postService.deletePost(id);
-        return ResponseEntity.noContent().build();
-    }
 }
 
 //  Thay đổi nội dung để cập nhật git history

@@ -31,10 +31,7 @@ public class DashboardController {
     // Helper method để kiểm tra Admin (nếu cần)
     private void validateAdminAccess(String jwt) throws UserException {
         User user = userService.findUserProfileByJwt(jwt);
-        // Nếu logic của bạn yêu cầu phải là ADMIN mới xem được dashboard
-        // if (!user.getRole().equals(UserRole.ADMIN)) {
-        //     throw new UserException("Access Denied: Only Admin can view dashboard");
-        // }
+        
     }
 
     @Operation(summary = "Lấy tổng doanh thu theo từng năm (List)")

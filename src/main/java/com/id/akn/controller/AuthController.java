@@ -67,44 +67,4 @@ public class AuthController {
         this.geminiService = geminiService;
         this.payOS = payOS;
     }
-	@PostMapping("/login")
-	public ResponseEntity<?> loginUserHandler(@RequestBody Login login){
-
-        // Bước 1: Verify Captcha
-		boolean isCaptchaValid = captchaService.verify(login.getRecaptchaToken());
-		if (!isCaptchaValid) {
-			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
-		}@PostMapping("/signup")
-	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
-		
-        // Bước 1: Verify Captcha
-		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
-		if (!isCaptchaValid) {
-			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
-		}
-
-        // Bước 2: Logic Đăng nhập
-		Authentication authentication = authenticate(login.getEmail(), login.getPassword());
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		String token = jwtProvider.generateToken(authentication);
-
-		AuthRes authRes = new AuthRes();
-		authRes.setJwt(token);
-		authRes.setMessage("Đăng nhập thành công");
-		return new ResponseEntity<>(authRes, HttpStatus.CREATED);
-
-	}@PostMapping("/signup")
-	public ResponseEntity<?> createUserHandler(@Valid @RequestBody UserSignupDTO userSignupDTO) throws UserException {
-		
-        // Bước 1: Verify Captcha
-		boolean isCaptchaValid = captchaService.verify(userSignupDTO.getRecaptchaToken());
-		if (!isCaptchaValid) {
-			throw new BadCredentialsException("Captcha không hợp lệ hoặc đã hết hạn.");
-		}
-
-	private Authentication authenticate(String username, String password) {
-		UserDetails userDetails = customUserDetail.loadUserByUsername(username);
-		if(userDetails==null) {
-			ePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-	}
 }

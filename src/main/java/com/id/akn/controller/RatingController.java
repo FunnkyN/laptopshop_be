@@ -30,16 +30,7 @@ public class RatingController {
 	private UserService userService;
 	private RatingService ratingService;
 
-	@PostMapping("/create")
-	public ResponseEntity<com.id.akn.model.Rating> createRatingHandler(@RequestBody(required = false) RatingDTO req, @RequestHeader("Authorization") String jwt) throws UserException, LaptopException, OrderException {
-		User user=userService.findUserProfileByJwt(jwt);
-		com.id.akn.model.Rating rating=ratingService.createRating(req, user);
-		return new ResponseEntity<>(rating,HttpStatus.ACCEPTED);
-	}
 
-	@GetMapping("/laptop/{laptopId}")
-	public ResponseEntity<List<com.id.akn.model.Rating>> getLaptopRatingsHandler(@PathVariable Long laptopId){
-		List<com.id.akn.model.Rating> ratings = ratingService.getLaptopRatings(laptopId);
-		return new ResponseEntity<>(ratings,HttpStatus.OK);
-	}
+
+	
 }
